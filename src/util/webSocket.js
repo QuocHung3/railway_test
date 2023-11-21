@@ -60,10 +60,10 @@ function webSocket(server) {
 
         socket.on('cancel_help', (data) => {
             if (data) {
-                console.log(">>>Check dataa cancelheelp: ",data)
+                console.log('>>>Check dataa cancelheelp: ', data);
+                io.emit('customer_cancel_help', data);
             }
         });
-        
 
         socket.on('disconnect', () => {
             console.log('A client disconnected');
