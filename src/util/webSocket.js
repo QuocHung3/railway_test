@@ -12,7 +12,6 @@ function webSocket(server) {
 
         // receive request from customer
         socket.on('rescue-request', (data) => {
-            console.log(data);
             if (receiveRequestsEnabled && data.location != null) {
                 !!expoPushToken && sendPushNotification(expoPushToken, 'Yêu cầu cứu hộ mới !', data.message);
                 io.emit('new-rescue-request', data);
